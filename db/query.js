@@ -17,6 +17,7 @@ function create(cartoon) {
 
 function update(id, cartoon) {
 	// Update a cartoon with the specified id
+	return db.table('cartoon').update(cartoon).where('id', id);
 }
 
 function remove(id) {
