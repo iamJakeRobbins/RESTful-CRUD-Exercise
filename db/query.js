@@ -2,6 +2,7 @@ var db = require('./connection');
 
 function getAll() {
 	// Get all cartoons and return them to the route
+	return db.select('*').from('cartoon');
 }
 
 function getOne(id) {
