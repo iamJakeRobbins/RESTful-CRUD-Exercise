@@ -38,6 +38,14 @@ router.put('/:id', (req, res, next) => {
 		.catch(err => next(err));
 });
 
+router.patch('/:id', (req, res, next) => {
+	const id = req.params.id;
+
+	db.update(id, req.body)
+		.then(() => res.sendStatus(200))
+		.catch(err => next(err));
+});
+
 // Route for deleting an item
 
 
