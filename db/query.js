@@ -12,6 +12,7 @@ function getOne(id) {
 
 function create(cartoon) {
 	// Add a cartoon to the database
+	return db.table('cartoon').insert(cartoon)
 }
 
 function update(id, cartoon) {

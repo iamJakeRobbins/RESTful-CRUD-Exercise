@@ -20,7 +20,14 @@ router.get('/:id', (req, res, next) => {
 })
 
 // Create the route for creating an item
-
+router.post('/', (req, res, next) => {
+	db.create(req.body)
+		.then((result) => res.sendStatus(201))
+		.catch(err => {
+			console.log(err);
+			next(err);
+		});
+});
 
 // Create the route for updating
 
