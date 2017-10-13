@@ -22,6 +22,7 @@ function update(id, cartoon) {
 
 function remove(id) {
 	// Delete the specified cartoon
+	return db.del().from('cartoon').where('id', id);
 }
 
 module.exports = {

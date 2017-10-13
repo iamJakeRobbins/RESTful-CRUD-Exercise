@@ -47,6 +47,12 @@ router.patch('/:id', (req, res, next) => {
 });
 
 // Route for deleting an item
+router.delete('/:id', (req, res, next) => {
+	const id = req.params.id;
 
+	db.remove(id)
+		.then(() => res.sendStatus(200))
+		.catch(err => next(err));
+});
 
 module.exports = router;
