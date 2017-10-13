@@ -7,6 +7,7 @@ function getAll() {
 
 function getOne(id) {
 	// Get one cartoon by the id and return it
+	return db.select('*').from('cartoon').where('id', id);
 }
 
 function create(cartoon) {

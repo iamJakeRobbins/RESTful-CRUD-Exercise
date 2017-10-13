@@ -11,7 +11,13 @@ router.get('/', (req, res, next) => {
 });
 
 // Create the route for get one
+router.get('/:id', (req, res, next) => {
+	const id = req.params.id;
 
+	db.getOne(id)
+		.then(cartoon => res.json(cartoon))
+		.catch(err => next(err));
+})
 
 // Create the route for creating an item
 
